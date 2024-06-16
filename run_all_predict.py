@@ -30,11 +30,11 @@ train_teacher = True
 # 构建output_dir
 for t_alpha_kd in t_alpha_kds:
     for task_name in task_names:
-        output_dir = f"./output/lgtm_cross_new_distan_tinybert_big_dataset/99ot_lgtm_{task_name}_{num_train_epochs}_correct_MINE_train_step"
+        output_dir = f"./output/cross_new_distan_tinybert_big_dataset/99ot_lgtm_{task_name}_{num_train_epochs}_correct_MINE_train_step"
         output_dir = os.path.join(".", output_dir)
         model_name_or_path = output_dir
         # 构建命令
-        command = f"python run_glue_lgtm_cross_new_distan_new_split.py --model_name_or_path {model_name_or_path} \
+        command = f"python run_glue_cross_new_distan_new_split.py --model_name_or_path {model_name_or_path} \
             --teacher_model {teacher_model} \
             --task_name {task_name} \
             --per_device_train_batch_size {per_device_train_batch_size} \
